@@ -21,7 +21,7 @@ You can go to the dropdown that says `main.dart` and select `Edit configurations
 Once done, you can select any flavor you configured and run it using the play or debug button.
 
 ## Git rules
-We're using Git Workflow as we do in all other Study Social apps until now. Every project collaborator **MUST** follow the Git Workflow, explained [here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+We're using Git Workflow. Every project collaborator **MUST** follow the Git Workflow, explained [here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 
 ## Code rules
 Let's follow Flutter general [conventions](https://flutter.dev/docs/perf/rendering/best-practices) & general good practices as well.
