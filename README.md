@@ -4,6 +4,7 @@
 
 
 ## Prerequisites
+A Flutter installation and configuration must be done.
 - [Flutter](https://flutter.io/) 2.0.0
 
 ## Getting Started
@@ -12,10 +13,15 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Configuring Android Studio to run this new configuration
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# factoryapp
+You can go to the dropdown that says `main.dart` and select `Edit configurations`. Hit the + button and add a new Flutter configuration and name it as you please.
+- For the entry point, select Dart's main class.
+
+Once done, you can select any flavor you configured and run it using the play or debug button.
+
+## Git rules
+We're using Git Workflow as we do in all other Study Social apps until now. Every project collaborator **MUST** follow the Git Workflow, explained [here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+
+## Code rules
+Let's follow Flutter general [conventions](https://flutter.dev/docs/perf/rendering/best-practices) & general good practices as well.
