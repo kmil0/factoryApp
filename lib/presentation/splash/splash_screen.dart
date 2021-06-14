@@ -1,5 +1,7 @@
+import 'package:factoryapp/presentation/login/login_screen.dart';
 import 'package:factoryapp/presentation/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
@@ -9,6 +11,15 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => LoginScreen()));
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,11 +33,16 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 10),
-            Text(
-              'FactoryApp',
-              textAlign: TextAlign.center,
+            Lottie.asset(
+              'assets/factorysplash.json',
+              width: 200,
+              fit: BoxFit.fill,
             ),
+            const SizedBox(height: 10),
+            Text('FactoryApp',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline3!.copyWith(
+                    fontWeight: FontWeight.bold, color: FactoryColors.white)),
           ],
         ),
       ),
