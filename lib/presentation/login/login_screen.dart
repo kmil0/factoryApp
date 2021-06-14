@@ -3,6 +3,7 @@ import 'package:factoryapp/domain/repository/local_storage_repository.dart';
 import 'package:factoryapp/presentation/home/home_screen.dart';
 import 'package:factoryapp/presentation/login/login_bloc.dart';
 import 'package:factoryapp/presentation/theme.dart';
+import 'package:factoryapp/presentation/widgets/factory_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -155,8 +156,12 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   )),
-              ElevatedButton(
-                  onPressed: () => login(context), child: Text('Login'))
+              FactoryPurpleButton(
+                text: 'Login',
+                onTap: () => login(context),
+                padding: const EdgeInsets.all(25),
+                spread: 20,
+              )
             ],
           ),
           Positioned.fill(
