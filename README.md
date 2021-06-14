@@ -1,7 +1,7 @@
-# factoryapp.
-<img src="lib/assets/images/logo.png" width="100" height="120">
+# Factoryapp.
+<img src="assets/images/logo.png" width="80" height="80"> A new Flutter project.
 
-A new Flutter project.
+
 
 ## Prerequisites
 - [Flutter](https://flutter.io/) 2.0.0
