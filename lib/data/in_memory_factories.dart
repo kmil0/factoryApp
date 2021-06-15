@@ -14,6 +14,8 @@ final factories = [
   Factory(
       name: 'Madera', location: "Quito - Ecuador", employees: 20, rate: 3.9),
   Factory(
+      name: 'Tesla', location: "California - USA", employees: 2000, rate: 4.5),
+  Factory(
       name: 'Neumaticos',
       location: "Medellin - Colombia",
       employees: 800,

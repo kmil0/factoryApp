@@ -1,3 +1,4 @@
+import 'package:factoryapp/domain/model/factory_model.dart';
 import 'package:factoryapp/domain/model/user_model.dart';
 import 'package:factoryapp/domain/repository/api_repository.dart';
 import 'package:factoryapp/domain/repository/local_storage_repository.dart';
@@ -22,5 +23,13 @@ class HomeBLoC extends ChangeNotifier {
     final token = await localRepositoryInterface.getToken();
     await apiRepositoryInterface.logout(token!);
     await localRepositoryInterface.clearAllData();
+  }
+
+  List<Factory> factoryList = <Factory>[];
+
+  void loadFactories() async {
+    final result = await apiRepositoryInterface.getFactories();
+    factoryList = result;
+    notifyListeners();
   }
 }
