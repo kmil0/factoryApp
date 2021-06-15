@@ -17,4 +17,10 @@ class HomeBLoC extends ChangeNotifier {
     user = await localRepositoryInterface.getUser();
     notifyListeners();
   }
+
+  Future<void> logOut() async {
+    final token = await localRepositoryInterface.getToken();
+    await apiRepositoryInterface.logout(token!);
+    await localRepositoryInterface.clearAllData();
+  }
 }

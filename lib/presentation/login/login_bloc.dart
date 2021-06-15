@@ -24,6 +24,7 @@ class LoginBLoC extends ChangeNotifier {
 
     try {
       loginState = LoginState.loading;
+      notifyListeners();
       final loginResponse =
           await apiRepositoryInterface.login(LoginRequest(username, password));
       await localRepositoryInterface.saveToken(loginResponse.token);

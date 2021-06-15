@@ -10,7 +10,7 @@ import 'package:factoryapp/domain/response/login_response.dart';
 class ApiRepositoyImpl extends ApiRepositoryInterface {
   @override
   Future<User> getUserFromToken(String token) async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 2));
 
     if (token == 'XYZR1') {
       return User(
@@ -35,14 +35,14 @@ class ApiRepositoyImpl extends ApiRepositoryInterface {
           User(
               name: 'Steve Jobs',
               username: 'stevejobs',
-              image: 'assets/images/steve.jpeg'));
+              image: 'assets/images/steve.jpg'));
     } else if (login.username == 'elon' && login.password == 'musk') {
       return LoginResponse(
           'XYZR2',
           User(
               name: 'Elon Musk',
               username: 'elonmusk',
-              image: 'assets/images/elon.jpeg'));
+              image: 'assets/images/elon.jpg'));
     }
     throw AuthException();
   }

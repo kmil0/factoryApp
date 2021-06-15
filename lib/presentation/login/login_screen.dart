@@ -46,134 +46,138 @@ class LoginScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(15));
     return Scaffold(
         key: _scaffolKey,
-        body: Stack(children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                  flex: 2,
-                  child: Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20.0),
-                        child: ClipPath(
-                          clipper: ClippingClass(),
-                          child: Container(
-                              height: 135.0,
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: factoryGradients))),
+        body: GestureDetector(
+          onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
+          child: Stack(children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                    flex: 2,
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: ClipPath(
+                            clipper: ClippingClass(),
+                            child: Container(
+                                height: 135.0,
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                        colors: factoryGradients))),
+                          ),
                         ),
-                      ),
-                      Positioned.fill(
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            height: 90.0,
-                            width: 90.0,
-                            child: Image.asset(
-                              'assets/images/logo.png',
-                              width: 100,
-                            ),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.white,
-                                width: 5.0,
+                        Positioned.fill(
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              height: 90.0,
+                              width: 90.0,
+                              child: Image.asset(
+                                'assets/images/logo.png',
+                                width: 100,
+                              ),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 5.0,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  )),
-              Expanded(
-                  flex: 4,
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            'Login',
-                            textAlign: TextAlign.center,
-                            style:
-                                Theme.of(context).textTheme.headline5!.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                          ),
-                          const SizedBox(height: 60),
-                          Text('UserName',
-                              textAlign: TextAlign.start,
+                      ],
+                    )),
+                Expanded(
+                    flex: 4,
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              'FactoryApp',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: FactoryColors.purple,
-                                  fontWeight: FontWeight.bold)),
-                          const SizedBox(height: 10),
-                          TextField(
-                            controller: bloc.usernameTextContoller,
-                            decoration: InputDecoration(
-                                hintText: 'username',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24.0,
+                                color: FactoryColors.purple,
+                              ),
+                            ),
+                            const SizedBox(height: 60),
+                            Text('UserName',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    color: FactoryColors.purple,
+                                    fontWeight: FontWeight.bold)),
+                            const SizedBox(height: 10),
+                            TextField(
+                              controller: bloc.usernameTextContoller,
+                              decoration: InputDecoration(
+                                  hintText: 'username',
+                                  filled: true,
+                                  border: _borderLight,
+                                  enabledBorder: _borderLight,
+                                  focusedBorder: _borderLight,
+                                  hintStyle: GoogleFonts.poppins(
+                                      color: FactoryColors.purpleLight,
+                                      fontSize: 10),
+                                  prefixIcon: Icon(
+                                    Icons.person_outline,
+                                    color: FactoryColors.purple,
+                                  )),
+                            ),
+                            const SizedBox(height: 20),
+                            Text('Password',
+                                style: TextStyle(
+                                    color: FactoryColors.purple,
+                                    fontWeight: FontWeight.bold)),
+                            const SizedBox(height: 10),
+                            TextField(
+                              controller: bloc.passwordTextController,
+                              obscureText: true,
+                              decoration: InputDecoration(
                                 filled: true,
                                 border: _borderLight,
                                 enabledBorder: _borderLight,
-                                focusedBorder: _borderLight,
                                 hintStyle: GoogleFonts.poppins(
                                     color: FactoryColors.purpleLight,
                                     fontSize: 10),
+                                focusedBorder: _borderLight,
+                                hintText: 'password',
                                 prefixIcon: Icon(
-                                  Icons.person_outline,
+                                  Icons.lock_outline,
                                   color: FactoryColors.purple,
-                                )),
-                          ),
-                          const SizedBox(height: 20),
-                          Text('Password',
-                              style: TextStyle(
-                                  color: FactoryColors.purple,
-                                  fontWeight: FontWeight.bold)),
-                          const SizedBox(height: 10),
-                          TextField(
-                            controller: bloc.passwordTextController,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              filled: true,
-                              border: _borderLight,
-                              enabledBorder: _borderLight,
-                              hintStyle: GoogleFonts.poppins(
-                                  color: FactoryColors.purpleLight,
-                                  fontSize: 10),
-                              focusedBorder: _borderLight,
-                              hintText: 'password',
-                              prefixIcon: Icon(
-                                Icons.lock_outline,
-                                color: Theme.of(context).iconTheme.color,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  )),
-              FactoryPurpleButton(
-                text: 'Login',
-                onTap: () => login(context),
-                padding: const EdgeInsets.all(25),
-                spread: 20,
-              )
-            ],
-          ),
-          Positioned.fill(
-              child: (bloc.loginState == LoginState.loading)
-                  ? Container(
-                      color: Colors.black26,
-                      child: Center(
-                        child: CircularProgressIndicator(
-                            color: FactoryColors.purpleLight),
-                      ))
-                  : const SizedBox.shrink())
-        ]));
+                    )),
+                FactoryPurpleButton(
+                  text: 'Login',
+                  onTap: () => login(context),
+                  padding: const EdgeInsets.all(25),
+                  spread: 20,
+                )
+              ],
+            ),
+            Positioned.fill(
+                child: bloc.loginState == LoginState.loading
+                    ? Container(
+                        color: Colors.black26,
+                        child: Center(
+                          child: CircularProgressIndicator(
+                              color: FactoryColors.purpleLight),
+                        ))
+                    : const SizedBox.shrink())
+          ]),
+        ));
   }
 }
 
