@@ -26,10 +26,16 @@ class HomeBLoC extends ChangeNotifier {
   }
 
   List<Factory> factoryList = <Factory>[];
+  List<Factory> factoryTotalList = <Factory>[];
 
   void loadFactories() async {
     final result = await apiRepositoryInterface.getFactories();
     factoryList = result;
+    notifyListeners();
+  }
+
+  void addFactory(Factory addedfactory) {
+    factoryList.add(addedfactory);
     notifyListeners();
   }
 }

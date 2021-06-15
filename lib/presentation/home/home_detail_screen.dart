@@ -1,5 +1,5 @@
 import 'package:factoryapp/domain/model/factory_model.dart';
-import 'package:factoryapp/presentation/home/home_screen.dart';
+import 'package:factoryapp/presentation/home/item_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
