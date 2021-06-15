@@ -4,9 +4,13 @@ import 'package:factoryapp/domain/repository/api_repository.dart';
 import 'package:factoryapp/domain/repository/local_storage_repository.dart';
 import 'package:factoryapp/presentation/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.white, // Color for Android
+      statusBarBrightness: Brightness.dark));
   runApp(MyApp());
 }
 
@@ -25,9 +29,7 @@ class MyApp extends StatelessWidget {
       child: Builder(builder: (newContext) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+          theme: ThemeData(primarySwatch: Colors.blue),
           home: SplashScreen.init(newContext),
         );
       }),

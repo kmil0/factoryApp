@@ -82,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen>
       backgroundColor: FactoryColors.veryLightGrey,
       appBar: AppBar(
         backgroundColor: FactoryColors.purpleBerry,
+        brightness: Brightness.dark,
         leading: user?.image == null
             ? const SizedBox.shrink()
             : Padding(
