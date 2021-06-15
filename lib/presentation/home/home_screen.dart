@@ -2,6 +2,7 @@ import 'package:factoryapp/domain/model/factory_model.dart';
 import 'package:factoryapp/domain/repository/api_repository.dart';
 import 'package:factoryapp/domain/repository/local_storage_repository.dart';
 import 'package:factoryapp/presentation/home/home_bloc.dart';
+import 'package:factoryapp/presentation/home/home_detail_screen.dart';
 import 'package:factoryapp/presentation/splash/splash_screen.dart';
 import 'package:factoryapp/presentation/theme.dart';
 import 'package:factoryapp/presentation/widgets/factory_button.dart';
@@ -79,7 +80,16 @@ class HomeScreen extends StatelessWidget {
                 itemCount: homeBloc.factoryList.length,
                 itemBuilder: (context, index) {
                   final factory = homeBloc.factoryList[index];
-                  return ItemFactory(factory: factory, onTap: () {});
+                  return ItemFactory(
+                      textButton: 'Details',
+                      factory: factory,
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => FactoryDetail(
+                                  textButton: 'Back',
+                                  factorySelected: factory,
+                                )));
+                      });
                 })
             : Center(child: const CircularProgressIndicator()));
   }
@@ -88,7 +98,12 @@ class HomeScreen extends StatelessWidget {
 class ItemFactory extends StatelessWidget {
   final Factory factory;
   final VoidCallback onTap;
-  const ItemFactory({Key? key, required this.factory, required this.onTap})
+  final String textButton;
+  const ItemFactory(
+      {Key? key,
+      required this.factory,
+      required this.onTap,
+      required this.textButton})
       : super(key: key);
 
   @override
@@ -151,7 +166,7 @@ class ItemFactory extends StatelessWidget {
               ),
             ),
             FactoryPurpleButton(
-              text: 'Details',
+              text: textButton,
               onTap: onTap,
               padding: const EdgeInsets.symmetric(vertical: 4),
               spread: 5,
