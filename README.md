@@ -1,11 +1,21 @@
 # Factoryapp.
-<img src="assets/images/logo.png" width="80" height="80"> A new Flutter project.
+<img src="assets/images/logo.png" width="80" height="80"> A new Flutter project with [provider](https://pub.dev/packages/provider)
 
-
+# Preview
+<img src="assets/images/splash.png" width="276" height="597"> <img src="assets/images/login.png" width="276" height="597">
+<img src="assets/images/home.png" width="276" height="597"> <img src="assets/images/add.png" width="276" height="597">
 
 ## Prerequisites
 A Flutter installation and configuration must be done.
 - [Flutter](https://flutter.io/) 2.0.0
+
+- cd into the repo folder.
+
+ run flutter -> run-android or flutter run-ios to build the app.
+
+- to authenticate users: steve password: jobs - user: elon password: musk
+
+(Please note that a Mac with XCode is required to build for iOS)
 
 ## Getting Started
 
